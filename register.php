@@ -9,6 +9,7 @@ require_once 'classes/TastyRecipes/Util/Util.php';
 Util::init();
 
 $controller = SessionManager::getController();
+
 if(isset($_POST['submitSignup'])) {
   
         $firstName = htmlspecialchars($_POST['first'], ENT_QUOTES, 'UTF-8');

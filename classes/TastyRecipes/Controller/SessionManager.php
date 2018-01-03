@@ -1,7 +1,4 @@
 <?php
-
-
- 
 namespace TastyRecipes\Controller;
 
 use TastyRecipes\Controller\Controller;

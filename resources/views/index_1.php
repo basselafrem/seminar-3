@@ -20,11 +20,12 @@ ob_start();
         
             <div id="header">
                  <h1>Tasty Recipes</h1>
-          
             </div>
-        <div> 
-            <a href="index.php" class="btn" > Home</a> <a href="resources/views/calendar.php" class="btn">Calendar</a> 
-        </div>
+        
+            <div> 
+                <a href="index.php" class="btn" > Home</a> <a href="resources/views/calendar.php" class="btn">Calendar</a> 
+            </div>
+        
       <?php
       if(isset($_SESSION['u_id'])){
           echo "<form action='logout.php' method='POST'>
@@ -33,22 +34,14 @@ ob_start();
       
            }else{
              echo "<form action='login.php' method='POST'>
-            <input type='text' name='uid' placeholder='Username'>
-            <input type='password' name='pwd' placeholder='Password'>
-            <button class='btn' type='submit' name='submitLogin'>Login</button>
-                </form>";}
-              echo "<form action='resources/views/signup.php' method='POST'>
-                 <button class='btn' type='submit' name='submit'>SignUp</button>
-                 </form>";
-        
-         
-          
-                
-          
-                 
-                 
-           
-             ?>
+                   <input type='text' name='uid' placeholder='Username'>
+                   <input type='password' name='pwd' placeholder='Password'>
+                   <button class='btn' type='submit' name='submitLogin'>Login</button>
+                   </form>";}
+             echo "<form action='resources/views/signup.php' method='POST'>
+                   <button class='btn' type='submit' name='submit'>SignUp</button>
+                   </form>";
+         ?>
 
 
 <div id="contentt">
