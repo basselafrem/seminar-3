@@ -113,7 +113,7 @@ class DBH {
         }
         
         }
-        if($pageId == 3){
+        if($pageid == 3){
    
             $connection = self::connect(3);
         
@@ -125,7 +125,7 @@ class DBH {
             echo $row['date']."<br>";
             echo  nl2br($row['message']);
             if($_SESSION['u_uid'] == $row['uid']){
-            echo "<form method='POST' action='deleteComment.php'>";
+            echo "<form method='POST' action='../../deleteComment.php'>";
             echo "<input type='hidden' name='cid' value='".$row['cid']."'>";
             echo "<button class='btn' name='pancakesDelete'>Delete</button>";
             echo "</form>";
@@ -135,14 +135,16 @@ class DBH {
         
             }
     }
-    public static function deleteComment($pageid, $usercommentnr) {
-        $connection = self::connect(2);
+    public static function deleteComment($pageid, $usercid) {
+        
         if ($pageid == 2) {
-            $sql = "DELETE FROM meatballscomments WHERE cid ='$usercommentnr'";
+            $connection = self::connect($pageid);
+            $sql = "DELETE FROM meatballscomments WHERE cid ='$usercid'";
             $connection->query($sql);
         }
         if ($pageid == 3) {
-            $sql = "DELETE FROM pancakescomments WHERE cid ='$usercommentnr'";
+            $connection = self::connect($pageid);
+            $sql = "DELETE FROM pancakescomments WHERE cid ='$usercid'";
             $connection->query($sql);
         }
     }

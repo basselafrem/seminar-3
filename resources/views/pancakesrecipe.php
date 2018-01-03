@@ -1,7 +1,7 @@
 <?php
 include_once '../fragments/header.php';
 date_default_timezone_set('Europe/Stockholm');
-include '../../getComments.php';
+
 ?>
 
 
@@ -51,7 +51,7 @@ include '../../getComments.php';
                              echo "<textarea name='message'></textarea><br>";
                                    
                         }
-                        getComments('pancakescomments');
+                       include '../../getpanComments.php';
                     
  
              ?>

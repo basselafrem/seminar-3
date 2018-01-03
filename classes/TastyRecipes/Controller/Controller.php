@@ -33,8 +33,8 @@ class Controller {
     
     }
     
-    public function deleteComments($pageid, $usercommentnr) {
-        DBH::deleteComment($pageid, $usercommentnr);
+    public function deleteComments($pageid, $usercid) {
+        DBH::deleteComment($pageid, $usercid);
     }
     public function signUp($firstName, $lastName, $email, $userName, $passWord) {
         $newUser = new User($firstName, $lastName, $userName, $email, $passWord);

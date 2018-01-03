@@ -54,16 +54,10 @@
                        }
                       ?>
                 <?php
-                      include '../../getComments.php';
+                      include '../../getmeatComments.php';
                       ?>
-                <div >
-           
-   
-                    <form method="POST" action="../../getComments.php">
-                        <button class="btn" type="submit" name="meatballscomments ">Load Comment</button>
-                    </form>
-                    
-                  </div>
+                
+        
                 
      
      
