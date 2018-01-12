@@ -11,6 +11,7 @@ use TastyRecipes\Model\UserLogIn;
 class DBH {
     
     public static function logIn(UserLogIn $user) {
+       
         $connection = self::connect(1);
         $username = mysqli_real_escape_string($connection, $user->getUserName());
         $password = mysqli_real_escape_string($connection, $user->getPassword());
@@ -74,21 +75,14 @@ class DBH {
             $sql = "INSERT INTO pancakescomments(uid, date, message) VALUES ('$userid','$date', '$theComment');";
         }
               \mysqli_query($connection, $sql);
-          /*  $last_id = $connection->insert_id;
-            return [
-                'id' => $last_id,
-                'username' => $comment->getUserName(),
-                'text' => $comment->getMsg()
-            ];
-        } else {
-            return null;
-        }*/
+          
       
     }
     public static function getComments($pageid) {
         if($pageid == 2){
         
         $connection = self::connect(2);
+        
             $sql = "SELECT * FROM meatballscomments";
             $result = $connection->query($sql);
             

@@ -53,7 +53,7 @@
                              echo "<textarea name='message'></textarea><br>";
                        }
                       ?>
-                <?php
+                     <?php
                       include '../../getmeatComments.php';
                       ?>
                 

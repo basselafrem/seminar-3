@@ -19,13 +19,17 @@ class Controller {
     
     }
     public function logIn($userName, $passWord) {
+         
         $user = new UserLogIn($userName, $passWord);
         DBH::logIn($user);
+         
     }
     
     public function storeComments($uid, $date, $message, $page) {
+         
         $comment = new Comment($uid,$date, $message);
         return DBH::registerComment($comment, $page);
+                 
     }
     
     public function getComments($pageId) {
@@ -37,8 +41,10 @@ class Controller {
     }
     
     public function signUp($firstName, $lastName, $email, $userName, $passWord) {
+       
         $newUser = new User($firstName, $lastName, $userName, $email, $passWord);
         DBH::signUp($newUser);
+                 
     }
     
     public function getNumRows($pageID){

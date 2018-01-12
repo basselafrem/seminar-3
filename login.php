@@ -13,11 +13,16 @@ $controller = SessionManager::getController();
 
 if(isset($_POST['submitLogin'])) {
     
-        $userName = htmlspecialchars($_POST['uid'], ENT_QUOTES, 'UTF-8');
-        $passWord = htmlspecialchars($_POST['pwd'], ENT_QUOTES, 'UTF-8');
+    
+        $userName = htmlentities($_POST['uid'], ENT_QUOTES, 'UTF-8');
+        $passWord = htmlentities($_POST['pwd'], ENT_QUOTES, 'UTF-8');
+        if(ctype_print($userName) AND ctype_print($passWord)
+                 AND(!empty($userName) AND !empty($passWord)) ){
         $controller->logIn($userName, $passWord);
         SessionManager::storeController($controller);
-        header("Location: resources/views/welcome.php");  
+        header("Location: resources/views/welcome.php");
+                 }
+    
 }
 else {
     include 'resources/views/error.php';
